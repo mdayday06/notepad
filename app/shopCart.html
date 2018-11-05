@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车例子</title>
+</head>
+
+<body ng-controller="CartController">
+    <h1>your order</h1>
+    <div ng-repeat="item in items">
+        <span>{{item.title}}</span>
+        <input ng-model="item.count">
+        <!--angularjs内置过滤器currency,实现美元格式化-->
+        <span>{{item.price |currency}}</span>
+        <span>{{item.price*item.count |currency}}</span>
+    </div>
+
+    <p>
+        <input type="text" ng-model="color" placeholder="Enter a color" />
+        <hello-world/>
+    </p>
+
+    <p>
+        <input type="text" ng-model="color1" placeholder="Enter a color" />
+        <hello-world1 color-attr='{{color1}}' />
+    </p>
+
+
+
+
+
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</body>
+
+</html>
